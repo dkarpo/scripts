@@ -1,13 +1,17 @@
 /*
-  USB Keyboard emulation intented to act as a "keepalive" to prevent devices from sleeping.  This
-  is useful to keep Android phones (with an OTG cable) and computer systems awake if needed.  This
-  script requires an ATMega 32u4 based chip as those devices have native USB HID built in.  A great
-  device for this is the CJMCU Beetle which has a form factor that is half the size of a regular
-  USB key and has a ATMMega 32U4 chip on it.  Sweet.
+  USB Keyboard emulation intended to act as a "keepalive" to prevent
+  devices from sleeping.  This is useful to keep Android phones (with
+  an OTG cable) and computer systems awake if needed.  This script
+  requires an ATMega 32u4 based chip as those devices have native USB
+  HID built in.  A great  device for this is the CJMCU Beetle which
+  has a form factor that is half the size of a regular USB key and has
+  a ATMega 32u4 chip on it.
 
-  Sample keyboard codes can be found at: http://www.arduino.cc/en/Reference/KeyboardModifiers
-  
-  Note: Do not set the keyInterval *too* low or it will be tough to reprogram your device!
+  Sample keyboard codes can be found at: 
+    http://www.arduino.cc/en/Reference/KeyboardModifiers
+
+  Note: Do not set the keyInterval *too* low or it will be tough to
+  reprogram your device!
 
   Author: Derrick Karpo
   Date:   April 24, 2016
@@ -41,4 +45,3 @@ void loop() {
   ledwrite();                 // quickly turn the LED off
   delay(keyInterval);         // erm, sleepy time?
 }
-
