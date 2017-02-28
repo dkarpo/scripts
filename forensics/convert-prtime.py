@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #
-# Simple script to convert prtime to something usable
-# 
+# Simple script to convert PRTime to something usable
+#
 # From https://developer.mozilla.org/en/PRTime:
 #
 # PRTime is a 64-bit integer representing the number of microseconds since
@@ -32,15 +32,15 @@ def convert_prtime(prtime):
 def main():
     # setup the argument parser for the command line arguments
     parser = argparse.ArgumentParser(
-        prog='convert-prtime.py', 
+        prog='convert-prtime.py',
         description='Convert PRTime to something usable (CSV Output)')
 
-    parser.add_argument('-t', metavar='prtime', nargs='+', type=int, 
+    parser.add_argument('-t', metavar='prtime', nargs='+', type=int,
                         help='PRTime (ie. 1306678742795922)')
-    parser.add_argument('-i', metavar='input_file', 
+    parser.add_argument('-i', metavar='input_file',
                         type=argparse.FileType('rt'),
-                        help='Read PRTimes from a file, one PRtime per line')
-    parser.add_argument('-v', action='version', 
+                        help='Read PRTimes from a file, one PRTime per line')
+    parser.add_argument('-v', action='version',
                         version='%(prog)s 0.1', help='Version')
     args = parser.parse_args()
 
