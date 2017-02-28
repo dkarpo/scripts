@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 #
-# $Id: redact-files.py 208 2016-04-21 18:54:11Z dk $
-#
 # Traverse a directory of files and overwrite every file with a sane file.
 # This is useful when you need to redact a directory of pictures with a
 # single clean picture and keep the original file names.

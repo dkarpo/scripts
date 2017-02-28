@@ -1,7 +1,5 @@
 #!/usr/bin/python
 #
-# $Id: credit-card-check.py 57 2009-02-26 21:22:21Z dk $
-#
 # Test a number to see if it passes the Luhn check for credit
 # card validity.  Beware false positives.  Beware I say!
 #
@@ -20,7 +18,7 @@ except ImportError:
 def parseOptions():
     if len(sys.argv) == 1:
         sys.argv.append('-h')
-    
+
     usage = "usage: %prog card# ..."
     description = "Test a credit card number against the Luhn algorithm"
 

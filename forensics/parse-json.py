@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 #
-# $Id: parse-json.py 191 2013-12-30 22:51:38Z dk $
-#
 # Parse JSON data and pretty print it.  Nothing special.
 #
 # Author: Derrick Karpo
@@ -17,7 +15,7 @@ from optparse import OptionParser
 def parseOptions():
     if len(sys.argv) == 1:
         sys.argv.append('-h')
-    
+
     usage = "usage: %prog [options] filename"
     description = "Parse JSON data and output it in various formats"
 

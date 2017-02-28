@@ -1,7 +1,5 @@
 #!/usr/bin/python
 #
-# $Id: undress.py 90 2010-01-21 21:52:57Z dk $
-#
 # Detect multilayer images and graphic file signatures (slightly broken).
 #
 # Author: Derrick Karpo
@@ -24,7 +22,7 @@ except ImportError:
 def parseOptions():
     if len(sys.argv) == 1:
         sys.argv.append('-h')
-    
+
     usage = "usage: %prog [options]"
     description = "Search a directory(s) for graphic files to expose " \
                   "multilayer images or files that don't match their " \
@@ -89,7 +87,7 @@ def main():
             signature = 'matched'
         else:
             signature = 'unmatched'
-            
+
         # multilayer detection (could also use i.tell())
         try:
             i.seek(1)
@@ -97,8 +95,8 @@ def main():
         except EOFError:
             layered = 'singlelayer'
 
-        # software detection (useful for detecting pictures that come from 
-        # application like 'Macromedia Fireworks MX' which can contain 
+        # software detection (useful for detecting pictures that come from
+        # application like 'Macromedia Fireworks MX' which can contain
         # layers that are only viewable and detectable in their native app
         try:
             software = i.info['Software']

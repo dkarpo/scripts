@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 #
-# $Id: mime-identify.py 193 2014-01-13 21:16:56Z dk $
-#
 # Traverse a directory of files and make a copy of the tree which
 # includes only files with valid mime types.
 #
@@ -67,8 +65,8 @@ def main():
 
     # setup the argument parser for the command line arguments
     parser = argparse.ArgumentParser(
-        prog='mime-identify.py', 
-        description = '''Identify and classify files by MIME type with the option to 
+        prog='mime-identify.py',
+        description = '''Identify and classify files by MIME type with the option to
                          create a clean tree of files which pass an EXCLUDE_MIME list.''')
 
     parser.add_argument('-s', action='store_true',
@@ -119,7 +117,7 @@ def main():
         # copy files to the output directory
         if args.outputdir:
             if not os.path.exists(args.outputdir):
-                # copy all confirmed files to the targey directory 
+                # copy all confirmed files to the target directory
                 print('Copying confirmed MIME files:')
                 print('\tFrom {!s}'.format(args.inputdir))
                 print('\tTo   {!s}'.format(args.outputdir))
@@ -136,7 +134,7 @@ def main():
 
         # calculate MIME statistics
         if args.statistics:
-            stats_all_files = Counter([values[1] for values in 
+            stats_all_files = Counter([values[1] for values in
                                        all_files.items()])
 
             print("### MIME Statistics ###")

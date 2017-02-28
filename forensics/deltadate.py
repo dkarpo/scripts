@@ -1,7 +1,5 @@
 #!/usr/bin/python
 #
-# $Id: deltadate.py 56 2008-08-29 22:00:28Z dk $
-#
 # Calculate the delta between two dates and/or times.
 #
 # Author: Derrick Karpo
@@ -65,7 +63,7 @@ def main():
 
     diff = t2 - t1
     weeks, days = divmod(diff.days, 7)
-    
+
     print '%i seconds' % (s2 - s1)
     print '%s hours.' % diff
     print '%i weeks and %i days.' % (weeks, days)
