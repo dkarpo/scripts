@@ -105,7 +105,12 @@ def main():
         for fn in files:
             try:
                 INPUT_FILE = os.path.join(root, fn)
-                OUTPUT_FILE = os.path.join(args.o, fn)
+                OUTPUT_FILE = os.path.join(args.o, root.lstrip(os.sep), fn)
+
+                # create the output directory if it doesn't exist
+                OUTPUT_FILE_PATH = os.path.split(OUTPUT_FILE)[0]
+                if not os.path.exists(OUTPUT_FILE_PATH):
+                    os.makedirs(OUTPUT_FILE_PATH)
 
                 # read in the input file header (first 32 bytes)
                 with open(INPUT_FILE, mode='r', encoding = "ISO-8859-1") as input_file:
