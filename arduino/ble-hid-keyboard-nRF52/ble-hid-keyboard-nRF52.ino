@@ -2,15 +2,15 @@
   Bluetooth Low Energy (BLE) HID Keyboard using a nRF52 based board.
 
   I'm using this with an Adafruit Feather nRF52 Bluefruit LE to act as
-  a wireless pedal based teleprompt controller to "Page Up" and "Page
-  Down" a laptop, tablet, or phone screen with lyrics during band
-  jams. You can use it to create a wireless Bluetooth keyboard to
-  press shortcut keys, as a volume control, to trigger screenshots,
-  etc.
+  a wireless pedal based teleprompt controller to "Page Up", "Page
+  Down", and "Home" a laptop, tablet, or phone screen with lyrics
+  during band jams. You can use it to create a wireless Bluetooth
+  keyboard to press shortcut keys, as a volume control, to trigger
+  screenshots, etc.
 
   The below code sends these keycodes when the physical buttons
-  connected to pins 15 or 16 are pressed. This code is a rip-off of
-  the excellent samples from Adafruit! :D If you want to add more
+  connected to pins 7, 15, or 16 are pressed. This code is a rip-off
+  of the excellent samples from Adafruit! :D If you want to add more
   buttons and functions to other pins just modify the pins[] and
   hidcode[] array and wire some normally open (NO) momentary push
   buttons between the appropropriate digital pins and ground. I didn't
@@ -33,8 +33,8 @@ BLEDis bledis;
 BLEHidAdafruit blehid;
 
 // digital pins and keycodes (see BLEHidGeneric.h)
-uint8_t pins[]    = {15, 16};
-uint8_t hidcode[] = {HID_KEY_PAGE_UP, HID_KEY_PAGE_DOWN};
+uint8_t pins[]    = {7, 15, 16};
+uint8_t hidcode[] = {HID_KEY_PAGE_UP, HID_KEY_PAGE_DOWN, HID_KEY_HOME};
 uint8_t pincount  = sizeof(pins)/sizeof(pins[0]);
 bool keyPressedPreviously = false;
 
