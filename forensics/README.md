@@ -14,5 +14,6 @@ A handful of scripts I've kludged together for forensic type things.
 | mime-identify.py | Copy only files with a valid MIME type to a "clean" directory. |
 | parse-json.py | Parse JSON data and pretty print it. |
 | redact-files.py | Overwrite all files in a directory with a "sanitized" file (ie. for disclosure). |
+| tracking-the-world-csv.py | Download the raw .csv file from 'Tracking The World'. |
 | undress.py | Detect multilayer images and graphic file signatures. |
 | wechat-audio-parser.py | Convert carved/extracted Wechat audio files into a playable format. |
