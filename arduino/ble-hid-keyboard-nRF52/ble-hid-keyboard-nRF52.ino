@@ -73,7 +73,7 @@ void startAdv(void) {
   Bluefruit.Advertising.addService(blehid);
 
   // BLE HID setup
-    Bluefruit.Advertising.addName();
+  Bluefruit.Advertising.addName();
   Bluefruit.Advertising.restartOnDisconnect(true);
   Bluefruit.Advertising.setInterval(32, 244);      // in units of 0.625 ms
   Bluefruit.Advertising.setFastTimeout(30);        // how long to stay in fast mode
