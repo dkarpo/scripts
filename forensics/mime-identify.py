@@ -31,9 +31,7 @@ def locateFilesRelative(root):
 
 
 def confirmMime(fn):
-    ms = magic.open(magic.MAGIC_MIME_ENCODING)
-    ms.load()
-    return(ms.file(fn))
+    return(magic.from_file(fn, mime=True))
 
 
 def copyFile(fn, inputdir, outputdir):
