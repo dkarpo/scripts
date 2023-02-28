@@ -15,9 +15,9 @@
 #   - $ wechat-dump/third-party/compile_silk.sh
 #   - $ sudo /bin/cp wechat-dump/third-party/silk/decoder /usr/local/bin
 # o This program requires 'sox' to convert raw SILK files to .wav
-#   - $ sudo apt-get install so
+#   - $ sudo apt-get install sox
 # o This program requires 'avconv' to convert .wav files to .mp3
-#   - $ sudo apt-get install libav-tools
+#   - $ sudo apt-get install ffmpeg
 #
 
 import os
@@ -76,8 +76,8 @@ def main():
     # test if the external applications exist
     SILKDECODER='/usr/local/bin/decoder'
     SOX='/usr/bin/sox'
-    AVCONV='/usr/bin/avconv'
-    for EXTERNAL_APPLICATION in SILKDECODER, SOX, AVCONV:
+    FFMPEG='/usr/bin/ffmpeg'
+    for EXTERNAL_APPLICATION in SILKDECODER, SOX, FFMPEG:
         if not os.path.isfile(EXTERNAL_APPLICATION):
             logging.info("External application '%s' could not be found.  Exiting."
                          % EXTERNAL_APPLICATION)
@@ -170,7 +170,7 @@ def main():
                 INPUT_FILE = os.path.join(root, fn)
                 try:
                     logMP3Conversion.debug("Converting '%s' to mp3." % INPUT_FILE)
-                    subprocess.check_call([AVCONV, '-loglevel','quiet', '-i',
+                    subprocess.check_call([FFMPEG, '-loglevel','quiet', '-i',
                                            INPUT_FILE, INPUT_FILE + '.mp3'])
                     logMP3Conversion.debug("Deleting '%s'." % INPUT_FILE)
                     os.remove(INPUT_FILE)
